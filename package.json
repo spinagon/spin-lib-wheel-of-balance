@@ -13,7 +13,10 @@
     "canvas"
   ],
   "author": "spinagon <flak.yar@gmail.com>",
-  "repository": "spinagon/spin-lib-wheel-of-balance",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/spinagon/spin-lib-wheel-of-balance.git"
+  },
   "license": "MIT",
   "dependencies": {
     "blueimp-canvas-to-blob": "^3.28.0",
