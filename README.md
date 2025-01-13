@@ -4,8 +4,6 @@
 
 A small lib for drawing configurable [wheel of balance](https://medium.com/thrive-global/how-does-one-become-centered-and-balanced-bb28627a4461). 
 
-Demo https://trusting-dijkstra-93d87f.netlify.app/
-
 ## Usage
 
 ```js
@@ -41,12 +39,3 @@ downloadButton.addEventListener('click', function (e) {
     wheel.download();
 });
 ```
-
-
-<a href="https://pspr.to/?utm_source=wheel-of-balance">
-  <img src="https://static.tildacdn.com/tild3334-6466-4734-b431-373632616332/logo_transparent.png"
-       alt="Sponsored by Psprto" width="100" height="100">
-</a>
-
-[npm]: https://img.shields.io/npm/v/wheel-of-balance.svg
-[npm-url]: https://npmjs.com/package/wheel-of-balance
