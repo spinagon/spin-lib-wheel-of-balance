@@ -50,7 +50,7 @@
         textWidth = ctx.measureText(text).width; // get the width of all the text
         if (end !== undefined && end !== null) { // if end is supplied then fit text between start and end
             pA = ((end - start) / textWidth) * dir;
-            wScale = (pA / pAS) * dir;
+            wScale = Math.min((pA / pAS), 1) * dir;
         } else {                 // if no end is supplied correct start and end for alignment
             // if forward is not given then swap top of circle text to read the correct direction
             if (forward === null || forward === undefined) {

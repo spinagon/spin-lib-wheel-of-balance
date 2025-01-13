@@ -134,21 +134,23 @@ export default class Wheel {
 
             const segment = segments[i];
 
-            const startAngle = i * radiansPerSegment;
-            const endAngle = startAngle + radiansPerSegment;
-            let centerAngel = (startAngle + endAngle) / 2;
+            let startAngle = i * radiansPerSegment;
+            let endAngle = startAngle + radiansPerSegment;
+            let centerAngle = (startAngle + endAngle) / 2;
 
             const textAngularWidth = ctx.measureCircleText(segment.text, radius).angularWidth;
-            if (centerAngel >= Math.PI) {
-                centerAngel -= textAngularWidth / 2;
-            } else {
-                centerAngel += textAngularWidth / 2;
+            startAngle = Math.max(startAngle, centerAngle - textAngularWidth / 2);
+            endAngle = Math.min(endAngle, centerAngle + textAngularWidth / 2);
+            if (centerAngle < Math.PI) {
+                let t = startAngle;
+                startAngle = endAngle;
+                endAngle = t;
             }
 
             ctx.beginPath();
             ctx.moveTo(center.x, center.y);
             ctx.fillStyle = segment.color;
-            ctx.fillCircleText(segment.text, center.x, center.y, radius + fontSize / 1.5, centerAngel);
+            ctx.fillCircleText(segment.text, center.x, center.y, radius + fontSize / 1.5, startAngle, endAngle);
 
             ctx.fill();
             ctx.closePath();
