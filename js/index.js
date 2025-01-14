@@ -72,6 +72,7 @@ export default class Wheel {
         }));
 
         this.canvas.onmousedown = event => this.setLevel(canvas, event);
+        this.canvas.onmousemove = event => this.setLevel(canvas, event);
     }
 
     draw = function () {
@@ -198,6 +199,7 @@ export default class Wheel {
     };
 
     setLevel(canvas, e) {
+        if (e.buttons == 0) return;
         const {
             dx,
             dy
